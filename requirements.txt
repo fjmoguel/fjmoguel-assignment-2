@@ -1,0 +1,7 @@
+Flask
+numpy
+scikit-learn
+matplotlib
+mpld3 
+Pillow
+plotly

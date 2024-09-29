@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>K-Means Clustering Visualization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</head>
+<body>
+    <h1>K-Means Clustering Visualization</h1>
+    <div class="controls">
+        <div>
+            <label for="k-input">Number of Clusters (K):</label>
+            <input type="number" id="k-input" min="3" max="300" value="4">
+        </div>
+        <div>
+            <label for="init-method">Initialization Method:</label>
+            <select id="init-method">
+                <option value="random">Random</option>
+                <option value="kmeans++">K-Means++</option>
+                <option value="farthest_first">Farthest First</option>
+                <option value="manual">Manual</option>
+            </select>
+        </div>
+    </div>
+    <div class="buttons">
+        <button onclick="stepThroughKMeans()">Step Through KMeans</button>
+        <button onclick="runToConvergence()">Run to Convergence</button>
+        <button onclick="generateDataset()">Generate New Dataset</button>
+        <button onclick="resetToInitialPlot()">Reset to Initial Plot</button>
+    </div>
+    <div id="plot" style="width:600px;height:450px;"></div>
+    <div id="message"></div>
+</body>
+</html>
